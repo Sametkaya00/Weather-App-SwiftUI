@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol WeatherServiceProtocol {
-    func getForecast(lat:Double,lon:Double, completion: @escaping (Result<ForecastResponse, Error>) -> Void)
+protocol WeatherApiProtocol {
+    func fetchPosts(lat:Double,lon:Double) async throws -> ForecastResponse
 }

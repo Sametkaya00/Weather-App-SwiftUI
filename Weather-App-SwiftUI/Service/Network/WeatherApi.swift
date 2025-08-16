@@ -6,32 +6,23 @@
 //
 
 import Foundation
-import Alamofire
 
-class WeatherApi:WeatherServiceProtocol{
-
-    private let apiKey = ApiConfig.apiKey
-    private let baseURL = ApiConfig.baseUrl
+class WeatherApi:WeatherApiProtocol{
+    private let apiKey:String = "db70f0bff8cdc000b716f2414ba5e41a"
     
-    func getForecast(lat: Double, lon: Double, completion: @escaping (Result<ForecastResponse, any Error>) -> Void) {
-        let params:Parameters = [
-            "lat":lat,
-            "lon":lon,
-            "appid":apiKey,
-            "units":"metric",
-            "lang":"tr"
-        ]
-        AF.request(baseURL,parameters: params)
-            .validate()
-            .responseDecodable(of:ForecastResponse.self){response in
-                switch response.result{
-                case .success(let forecast):
-                    completion(.success(forecast))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
+    func fetchPosts(lat: Double, lon: Double) async throws -> ForecastResponse{
+        guard let url = URL(string:"https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&appid=\(apiKey)") else{throw URLError(.badURL)}
+        
+        
+        let (data , response) = try await URLSession.shared.data(from: url)
+        
+        guard let httpResponse = response as? HTTPURLResponse , httpResponse.statusCode == 200 else {throw URLError(.badServerResponse)}
+        
+        let posts = try JSONDecoder().decode(ForecastResponse.self, from: data)
+        
+        return posts
     }
 }
+
 
 

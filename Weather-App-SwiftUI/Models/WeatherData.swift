@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 
 // MARK: - ForecastResponse
-struct ForecastResponse: Codable {
+struct ForecastResponse:Codable {
     let cod: String
     let message: Int
     let cnt: Int

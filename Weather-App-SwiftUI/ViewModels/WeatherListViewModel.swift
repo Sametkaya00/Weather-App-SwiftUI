@@ -6,33 +6,33 @@
 //
 import Foundation
 
-class WeatherListViewModel: ObservableObject {
-    @Published var forecasts: [ForecastItem] = []
-    @Published var cityName: String = ""
-    @Published var isLoading: Bool = false
-    @Published var errorMessage: String?
-
-    private let weatherService: WeatherServiceProtocol
-
-    init(weatherService: WeatherServiceProtocol = WeatherApi()) {
-        self.weatherService = weatherService
+@MainActor
+class WeatherListViewModel:ObservableObject{
+    @Published var forecastList:[ForecastItem] = []
+    @Published var city : City?
+    @Published var isLoading:Bool = false
+    @Published var errorMessage:String?
+    
+    private let api:WeatherApiProtocol
+    
+    init(api:WeatherApiProtocol = WeatherApi()){
+        self.api = api
     }
-
-    func fetchWeatherList(lat: Double, lon: Double) {
+    
+    func loadPosts(lat: Double, lon: Double) async{
         isLoading = true
         errorMessage = nil
-
-        weatherService.getForecast(lat: lat, lon: lon) { [weak self] result in
-            DispatchQueue.main.async {
-                self?.isLoading = false
-                switch result {
-                case .success(let response):
-                    self?.forecasts = response.list
-                    self?.cityName = response.city.name
-                case .failure(let error):
-                    self?.errorMessage = error.localizedDescription
-                }
-            }
+        
+        do{
+            let response = try await api.fetchPosts(lat: lat, lon: lon)
+            city = response.city
+            
+            forecastList = response.list
+        }catch{
+            errorMessage = error.localizedDescription
         }
+        isLoading = false
     }
+    
+    
 }
