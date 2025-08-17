@@ -28,7 +28,7 @@ class WeatherListViewModel:ObservableObject{
             city = response.city
             
             forecastList = response.list
-        }catch{
+        }catch {
             errorMessage = error.localizedDescription
         }
         isLoading = false

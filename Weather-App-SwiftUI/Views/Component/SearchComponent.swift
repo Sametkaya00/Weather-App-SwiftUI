@@ -14,9 +14,7 @@ struct SearchComponent: View {
             Text("Search")
                 .foregroundStyle(.black)
                 .font(.system(size: 13))
-              
         }
-        
         .frame(width: 350, height: 40)
         .background(.white.opacity(0.4))
         .cornerRadius(10)

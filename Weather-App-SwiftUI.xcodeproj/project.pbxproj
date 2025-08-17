@@ -6,17 +6,26 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		C5F03D822E47ADE9009A0786 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C5F03D812E47ADE9009A0786 /* Alamofire */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		C5F03D4B2E477CD1009A0786 /* Weather-App-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather-App-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C58129112E51DC2900BE9952 /* Exceptions for "Weather-App-SwiftUI" folder in "Weather-App-SwiftUI" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C5F03D4A2E477CD1009A0786 /* Weather-App-SwiftUI */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C5F03D4D2E477CD1009A0786 /* Weather-App-SwiftUI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C58129112E51DC2900BE9952 /* Exceptions for "Weather-App-SwiftUI" folder in "Weather-App-SwiftUI" target */,
+			);
 			path = "Weather-App-SwiftUI";
 			sourceTree = "<group>";
 		};
@@ -27,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5F03D822E47ADE9009A0786 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +78,6 @@
 			);
 			name = "Weather-App-SwiftUI";
 			packageProductDependencies = (
-				C5F03D812E47ADE9009A0786 /* Alamofire */,
 			);
 			productName = "Weather-App-SwiftUI";
 			productReference = C5F03D4B2E477CD1009A0786 /* Weather-App-SwiftUI.app */;
@@ -101,7 +108,6 @@
 			mainGroup = C5F03D422E477CD0009A0786;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				C5F03D802E47ADE9009A0786 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C5F03D4C2E477CD1009A0786 /* Products */;
@@ -265,6 +271,10 @@
 				DEVELOPMENT_TEAM = 8RFHAD9UF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Weather-App-SwiftUI/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"Uygulamanın hava durumu verilerini gösterebilmesi için konumunuza ihtiyaç var.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -293,6 +303,10 @@
 				DEVELOPMENT_TEAM = 8RFHAD9UF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Weather-App-SwiftUI/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"Uygulamanın hava durumu verilerini gösterebilmesi için konumunuza ihtiyaç var.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -333,25 +347,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C5F03D802E47ADE9009A0786 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.10.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C5F03D812E47ADE9009A0786 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5F03D802E47ADE9009A0786 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C5F03D432E477CD0009A0786 /* Project object */;
 }

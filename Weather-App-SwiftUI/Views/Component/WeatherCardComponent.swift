@@ -7,18 +7,12 @@
 
 import SwiftUI
 
-extension Double{
-    var toCelsisu:String{
-        return String(format: "%.1f", self - 273.15)
-    }
-}
+
 struct WeatherCardComponent: View {
     @StateObject private var listViewModel = WeatherListViewModel()
     let lat: Double
     let lon: Double
     var body: some View {
-        
-        
         Image("Rectangle")
             .overlay{
                 if listViewModel.isLoading{
@@ -31,11 +25,10 @@ struct WeatherCardComponent: View {
                         Text("\(firstForecast.main.temp.toCelsisu)°")//Dinamik data
                             .foregroundStyle(.white)
                             .bold()
-                            .font(.system(size: 60))
+                            .font(.system(size: 55))
                             .position(x:90,y:58)
                     }
                     HStack{
-                        
                         if let icon = firstForecast.weather.first?.icon{
                             let url = "https://openweathermap.org/img/wn/\(icon)@2x.png"
                             AsyncImage(url: URL(string: url)) { image in
@@ -69,16 +62,11 @@ struct WeatherCardComponent: View {
                     .font(.system(size: 15))
                     .position(x:80,y:144)
                 }
-                
-                
             }
             .task {
                 await listViewModel.loadPosts(lat: lat, lon: lon)
-                
             }
     }
-    
-    
 }
 
 #Preview {

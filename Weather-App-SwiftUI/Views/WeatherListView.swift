@@ -23,26 +23,28 @@ struct WeatherListView: View {
         (lat: 41.28, lon: 36.33), // Trabzon
         (lat: 38.42, lon: 27.13), // Aydın
         (lat: 37.57, lon: 34.75), // Adana
-        (lat: 38.42, lon: 27.13)  // Denizli
+        (lat: 38.42, lon: 27.13),  // Denizli
+        
     ]
     var body: some View {
-        VStack{
-            SearchComponent()
-                .safeAreaInset(edge: .top) {
-                    Color.clear.frame(height: 50) // Boşluk bırakır
+        ZStack{
+            Color("BacgroundColor")
+                .ignoresSafeArea()
+            VStack{
+                SearchComponent()
+                    .safeAreaInset(edge: .top) {
+                        Color.clear.frame(height: 30) // Boşluk bırakır
+                    }
+                
+                ScrollView{
+                    ForEach(cities.indices, id:\.self){index in
+                        WeatherCardComponent(lat: cities[index].lat, lon: cities[index].lon)
+                            .padding()
+                    }
+                    .padding(.bottom,10)
                 }
-            ScrollView{
-                ForEach(cities.indices, id:\.self){index in
-                    WeatherCardComponent(lat: cities[index].lat, lon: cities[index].lon)
-                }
-                .padding(.bottom,10)
-                .padding(.top,20)
             }
-            
         }
-        //MARK: - Background Color
-        .frame(maxWidth: .infinity,maxHeight: .infinity)
-        .background(Color("BacgroundColor")).ignoresSafeArea()
     }
 }
 
