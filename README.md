@@ -7,7 +7,7 @@
 -API Request
 -OpenWeather Api(Free)
 
-# Under development, current appearance is as follows
+## Under development, current appearance is as follows
 
 <img width="300" height="649" alt="IMG_2957" src="https://github.com/user-attachments/assets/519258e6-5b02-44ed-8311-8d650fa9ef8d" />
 <img width="300" height="649" alt="IMG_2958" src="https://github.com/user-attachments/assets/b1bf2946-5bc1-430c-b076-b7ea8ba9ff4c" />
