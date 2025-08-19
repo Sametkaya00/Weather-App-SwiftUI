@@ -17,3 +17,5 @@
 
 - Search search section will be active
 - We will improve the card part
+
+Figma ling: https://www.figma.com/design/1tsBCfTgZ1oMp923p0Vn0L/Weather-App-%7C-Template--Community-?node-id=216-4510&t=dxxXIppNAKpgleTn-0
