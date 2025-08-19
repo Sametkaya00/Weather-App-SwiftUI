@@ -3,8 +3,8 @@
 ## Built With:
 
 -SwiftUI 
--MVVM
--API Request
+-MVVM 
+-API Request 
 -OpenWeather Api(Free)
 
 ## Under development, current appearance is as follows
