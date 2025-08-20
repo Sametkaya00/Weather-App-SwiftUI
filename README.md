@@ -1,4 +1,4 @@
-# Recipe Weather App
+# Weather App
 
 ## Built With:
 
