@@ -18,4 +18,4 @@
 - Search search section will be active
 - We will improve the card part
 
-Figma ling: https://www.figma.com/design/1tsBCfTgZ1oMp923p0Vn0L/Weather-App-%7C-Template--Community-?node-id=216-4510&t=dxxXIppNAKpgleTn-0
+Figma link: https://www.figma.com/design/7rzbL3HSsu4Ea6QDPD2Dnr/Weather-App-UI-design--Community-?node-id=0-1&p=f&t=xwJYFJXqwYCLTjik-0
