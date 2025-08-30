@@ -4,7 +4,7 @@
 
 - SwiftUI
 - MVVM
-- OpenWeather
+- OpenWeatherMap
 - API Request
 
 ## Main Features:
