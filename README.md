@@ -23,3 +23,6 @@ Allows the user to search for any city or country to view its weather informatio
 
 
 Currently under development, a few more features will be added to the Search section :)
+
+# Figma Link
+ https://www.figma.com/design/7rzbL3HSsu4Ea6QDPD2Dnr/Weather-App-UI-design--Community-?node-id=0-1&t=pSjQuJ9RLlv7bI53-1
