@@ -10,11 +10,11 @@ import Foundation
 class WeatherListViewModel:ObservableObject{
     @Published var forecastList:[ForecastItem] = []
     @Published var city : City?
+    
     @Published var isLoading:Bool = false
     @Published var errorMessage:String?
     
     private let api:WeatherApiProtocol
-    
     init(api:WeatherApiProtocol = WeatherApi()){
         self.api = api
     }
@@ -33,6 +33,4 @@ class WeatherListViewModel:ObservableObject{
         }
         isLoading = false
     }
-    
-    
 }

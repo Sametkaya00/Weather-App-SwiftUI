@@ -8,6 +8,9 @@
 import Foundation
 extension Double{
     var toCelsisu:String{
-        return String(format: "%.1f", self - 273.15)
-    }
+        return String(format: "%.0f", self - 273.15)
+    }   
+}
+extension Double {
+    var noFraction: String { String(format: "%.0f", self) }
 }

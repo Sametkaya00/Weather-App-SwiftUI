@@ -8,10 +8,9 @@
 import Foundation
 
 class WeatherApi:WeatherApiProtocol{
-    private let apiKey:String = "db70f0bff8cdc000b716f2414ba5e41a"
     
     func fetchPosts(lat: Double, lon: Double) async throws -> ForecastResponse{
-        guard let url = URL(string:"https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&appid=\(apiKey)") else{throw URLError(.badURL)}
+        guard let url = URL(string:"https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&appid=\(ApiConfig.apiKey)") else{throw URLError(.badURL)}
         
         
         let (data , response) = try await URLSession.shared.data(from: url)
@@ -23,6 +22,3 @@ class WeatherApi:WeatherApiProtocol{
         return posts
     }
 }
-
-
-

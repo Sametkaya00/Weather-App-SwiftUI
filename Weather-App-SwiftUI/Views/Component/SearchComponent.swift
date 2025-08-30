@@ -8,21 +8,58 @@
 import SwiftUI
 
 struct SearchComponent: View {
-    @State private var SearchText: String = ""
+    @StateObject var viewModel = WeatherCityViewModel()
+    @State var searchText: String
+    @State var cityPrototip:String = ""
+    
     var body: some View {
-        TextField(text: $SearchText) {
-            Text("Search")
-                .foregroundStyle(.black)
-                .font(.system(size: 13))
+        VStack{
+            HStack {
+                
+                Button {
+                    cityPrototip = searchText
+                   
+                    viewModel.addNewData(cityPrototip)
+                    searchText = ""
+                 
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .foregroundStyle(.blue)
+                        .scaledToFit()
+                        .frame(width: 16, height: 16)
+                    
+                }
+
+              
+                
+                TextField("Search", text: $searchText)
+                
+            }
+          
+            
+            .padding(.horizontal, 10)
+            .frame(width: 350, height: 40)
+            .background(.white)
+            .cornerRadius(10)
+            .padding()
+            ScrollView{
+                VStack{
+                    ForEach(viewModel.items, id:\.self){city in
+                        if !city.isEmpty{
+                            WeatherCardComponent(cityName: city)
+                        }
+                       
+                    }
+                    .padding(.horizontal)
+                }
+            }
+            
+         
         }
-        .frame(width: 350, height: 40)
-        .background(.white.opacity(0.4))
-        .cornerRadius(10)
-        .padding()
-       
+        Spacer()
     }
 }
-
-#Preview {
-    SearchComponent()
+#Preview{
+    SearchComponent(searchText: "")
 }

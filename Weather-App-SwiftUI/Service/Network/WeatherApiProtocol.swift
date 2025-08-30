@@ -10,3 +10,8 @@ import Foundation
 protocol WeatherApiProtocol {
     func fetchPosts(lat:Double,lon:Double) async throws -> ForecastResponse
 }
+
+
+protocol WearherCityApiProtocol{
+    func fetchCity(cityName:String) async throws -> CityResponse
+}
