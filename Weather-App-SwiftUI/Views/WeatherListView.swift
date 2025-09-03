@@ -16,9 +16,7 @@ struct WeatherListView: View {
             Color("BacgroundColor")
                 .ignoresSafeArea()
             VStack{
-                
                 SearchComponent(searchText: "")
-           
                 }
           
          Spacer()
